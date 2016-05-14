@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	background-color:#F30;
+}
+
+h1.title {
+	font-size:64pt;
+	font-family:Tahoma, Geneva, sans-serif;
+	text-align:center;
+	text-shadow:3px 3px 5px #000;
+	color:#333;
+}
+
+div.body {
+	background-color:#00C;
+	text-align:center;
+	margin-left:7%;
+	margin-right:7%;
+	border-style:outset;
+	border-width:thick;
+	border-color:#009;
+}
+
+table {
+	margin-left:10%;
+	margin-right:10%;
+}
+
+a.ows {
+	text-decoration:none;
+}
+
+a.ows > p {
+	border:outset;
+	background-color:#009;
+	text-decoration:none;
+	color:#CCC;
+	font-size:24px;
+}
