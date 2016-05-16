@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* CSS Document */
+
+.ddBtn {
+	background-color:#900;
+	color:#6F6;
+	padding:16px;
+	font-size:16pt;
+	border:none;
+	cursor:pointer;
+}
+
+.ddBtn:hover, .ddBtn:focus {
+	background-color:#600;
+}
+
+.dropdown 	{
+	position:relative;
+	display:inline-block;
+}
+
+.ddContent {
+	display:none;
+	position:absolute;
+	background-color:#CFF;
+	min-width:160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.ddContent a {
+	color:#F93;
+	padding: 12px 16px;
+	text-decoration:none;
+	display:block;
+}
+
+.ddContent a:hover {background-color: #f1f1f1}
+
+.show {
+	display:block;
+}
