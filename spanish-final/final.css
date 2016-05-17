@@ -85,3 +85,21 @@ div.body > input {
 div.body > input:active {
 	border:inset;
 }
+
+table#timeline {
+	margin-left:20%;
+	margin-right:20%;
+}
+
+#timeline td {
+	border-style:ridge;
+	border-color:#FFF;
+}
+
+#timeline p {
+	font-size:18px;
+	color:#FF0;
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+	padding-left:1%;
+	padding-right:1%;
+}
