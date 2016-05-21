@@ -23,6 +23,7 @@ div.body {
 	margin-left:7%;
 	margin-right:7%;
 	box-shadow: 5px 5px 15px #333;
+	text-align:center;
 }
 
 h1.title {
@@ -35,38 +36,14 @@ h1.title {
 	margin-right:10%;
 }
 
-div.nav {
-	background-color:#900;
-	margin-left:3%;
-	margin-right:3%;
-	box-shadow:5px 5px 12px #333;
-	text-align:center;
-}
-
-div.nav > a > button {
-	background-color:#900;
-	color:#FFF;
-	padding:8px;
-	font-size:16pt;
-	border:none;
-	cursor:pointer;
-	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
-}
-
-div.nav > a > button:hover {
-	background-color:#C00;
-}
-
 div.body > p {
-	text-align:center;
 	font-size:18px;
 	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
-	margin-left:5%;
-	margin-right:5%;
+	margin-left:15%;
+	margin-right:15%;
 }
 
 div.body > p > a {
-	text-align:center;
 	font-size:18px;
 	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
 	color:#900;
@@ -77,5 +54,61 @@ div.body > h3 {
 	text-align:center;
 	font-size:32px;
 	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+div.body > img {
+	width:80%;
+}
+
+table {
+	width:100%;
+	table-layout:fixed;
+}
+
+p {
+	font-size:16px;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#000;
+	text-decoration:none;
+}
+
+a {
+	text-decoration:none;
+}
+
+div.nav a > p {
+	font-size:18px;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#900;
+	text-decoration:none;
+}
+
+h3.or {
+	color:#FFF;
+	font-size:18px;
+	text-align:center;
+	margin-bottom:5px;
+}
+
+table.or {
+	width:25%;
+	table-layout:fixed;
+}
+
+table#bibliography {
+	text-align:left;
+}
+
+table#bibliography p {
+	text-indent: -50px;
+	text-align:left;
+	margin-left:20%;
+	margin-right:20%;
+}
+
+a.or > p {
+	color:#FFF;
+	font-size:16px;
+	margin-top:5px;
 }
 /*End temporary styles*/

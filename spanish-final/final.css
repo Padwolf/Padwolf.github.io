@@ -42,7 +42,7 @@ div.body {
 	text-align:center;
 }
 
-p.content {
+div.body > p{
 	font-size:24px;
 	color:#FF0;
 	font-family:"Trebuchet MS", Helvetica, sans-serif;
@@ -51,7 +51,7 @@ p.content {
 	text-align:center;
 }
 
-h2.content {
+div.body > h2 {
 	font-size:30px;
 	font-weight:bold;
 	color: #FC0;
@@ -66,7 +66,7 @@ img.content {
 	width:50%;
 }
 
-p.citation {
+div.body > p.citation {
 	color: #e6e6e6;
 	font-family:"Trebuchet MS", Helvetica, sans-serif;
 	font-size:10pt;
