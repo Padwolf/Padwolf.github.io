@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background-attachment:fixed;
+}
+
+table {
+	background-color:#FFF;
+	box-shadow:5px 5px 5px #999;
+	width:100%;
+}
+
+table a {
+	text-decoration:none;
+	text-align:center;
+}
+
+table a > p {
+	font-size:18px;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#900;
+	text-decoration:none;
+	margin:0px;
+}
