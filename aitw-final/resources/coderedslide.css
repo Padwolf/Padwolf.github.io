@@ -9,6 +9,9 @@ table {
 	background-color:#FFF;
 	box-shadow:5px 5px 5px #999;
 	width:100%;
+	table-layout:fixed;
+	position:fixed;
+	bottom:0;
 }
 
 table a {
