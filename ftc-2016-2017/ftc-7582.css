@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background-color:#700;
+}
+
+img.header {
+	width:90%;
+	border-radius:10px;
+	box-shadow:5px 5px 10px #999;
+}
+
+div.body {
+	background-color:#666;
+	border-style:outset;
+	border-radius:10px;
+}
+
+.dropdown-content > a {
+	font-family:Verdana, Geneva, sans-serif;
+}
