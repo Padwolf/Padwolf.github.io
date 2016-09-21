@@ -8,7 +8,7 @@ git add *
 git commit -m "%DATE% %TIME%: %commitMessage%"
 echo Committed
 :push
-set /p push="Do you want to push the changes to the GitHub? [Y]es/[N]o: "
+set /p push="Do you want to push the changes to GitHub? [Y]es/[N]o: "
 if /I "%push%"=="y" (
 	git push -u origin master
 	echo Pushed
