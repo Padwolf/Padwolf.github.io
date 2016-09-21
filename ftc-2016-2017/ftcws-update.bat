@@ -12,10 +12,12 @@ set /p push="Do you want to push the changes to the GitHub? [Y]es/[N]o: "
 if /I "%push%"=="y" (
 	git push -u origin master
 	echo Pushed
+	pause
 	goto:eof
 )
 if /I "%push%"=="n" (
 	echo Done
+	pause
 	goto:eof
 )
 echo "Please say [Y]es or [N]o"
