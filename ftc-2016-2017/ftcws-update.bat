@@ -10,7 +10,7 @@ echo Committed
 :push
 set /p push="Do you want to push the changes to GitHub? [Y]es/[N]o: "
 if /I "%push%"=="y" (
-	git push -u origin master
+	git push origin master
 	echo Pushed
 	pause
 	goto:eof
