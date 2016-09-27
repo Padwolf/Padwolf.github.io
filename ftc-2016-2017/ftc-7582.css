@@ -21,7 +21,7 @@ div.body {
 	font-family:Verdana, Geneva, sans-serif;
 }
 
-div.body > h1 {
+div.body h1 {
 	margin-left:25px;
 	margin-right:25px;
 	color:#000;
@@ -29,16 +29,34 @@ div.body > h1 {
 	text-shadow:3px 3px 5px #CCC;
 }
 
-div.body > p {
+div.body h3 {
 	margin-left:50px;
 	margin-right:50px;
 	color:#000;
 	font-family:Arial, Helvetica, sans-serif;
-	font-size:16px;
+	font-size:28px;
+}
+
+div.body p {
+	margin-left:50px;
+	margin-right:50px;
+	color:#000;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:20px;
 }
 
 div.body > p a{
 	color:#000;
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:16px;
+}
+
+div.leftcol {
+	float:left;
+	width:45%;
+}
+
+div.rightcol {
+	float:right;
+	width:45%;
 }
