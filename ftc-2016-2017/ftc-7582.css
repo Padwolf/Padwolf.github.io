@@ -17,6 +17,18 @@ div.body {
 	border-radius:10px;
 }
 
+div.body img.nav {
+	width:9%;
+}
+
+div.body div.dropdown>img.nav {
+	width: 100%;
+}
+
+div.dropdown {
+	width:9%;
+}
+
 .dropdown-content > a {
 	font-family:Verdana, Geneva, sans-serif;
 }

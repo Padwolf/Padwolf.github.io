@@ -6,27 +6,33 @@
 <link type="image/png" rel="icon" href="images/griffin.png" />
 <link type="text/css" rel="stylesheet" href="pills-ddmenu.css" />
 <link type="text/css" rel="stylesheet" href="ftc-7582.css"/>
+<script src="ftc-7582.js"></script>
 </head>
 
 <body>
-	<br /><center><img class="header" src="images/banners/banner-home.png" /></center><br />
+    <br /><center><img class="header" src="images/banners/banner-home.png" /></center><br />
     <div class="body">
-		<div align="center">
+		<div id="nav" align="center">
             <br />
-            <a class="nav active" href="#"><img src="images/nav/home-selected.png" /></a>
+            <a class="nav active" href="#"><img class="nav" src="images/nav/home-selected.png" /></a>
             <div class="dropdown">
-	           	<img src="images/nav/about.png" />
+	           	<img class="nav" src="images/nav/about.png" />
                 <div class="dropdown-content">
                    	<a href="aboutftc.html">About FTC</a>
                     <a href="aboutus.html">About Us</a>
                 </div>
             </div>
-    	    <a class="nav" href="supporter-resources.html"><img src="images/nav/supporter-resources.png" /></a>
-        	<a class="nav" href="team-resources.html"><img src="images/nav/team-resources.png" /></a>
+    	    <a class="nav" href="supporter-resources.html"><img class="nav" src="images/nav/supporter-resources.png" /></a>
+        	<a class="nav" href="team-resources.html"><img class="nav" src="images/nav/team-resources.png" /></a>
 		</div>
+        <script>
+			if (window.mobilecheck){
+				document.getElementById("nav").setAttribute("width", "90%");
+			}
+		</script>
     	<h1>Start of a New Season!</h1>
         <p>Hello everyone! The new FIRST Tech Challenge season has begun. This year's competition is <strong>Velocity Vortex</strong>. This year's challenge has the debut of <strong>launching objects</strong> and the first <strong>active competition</strong> component. See this year's challenge video below:</p>
-        <div align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/wqASwcqdM6o" frameborder="0" allowfullscreen></iframe></div>
+        <div align="center"><iframe width="50%" height="100%" src="https://www.youtube.com/embed/wqASwcqdM6o" frameborder="0" allowfullscreen></iframe></div>
         <br /><br />
         <h1>Meet the New Team:</h1>
         <p>Left to right: Joe Smith, John Doe, Jane Doe, Josh McIvaler, Names, names, names...</p>
