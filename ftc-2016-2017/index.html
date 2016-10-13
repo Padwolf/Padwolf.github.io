@@ -10,26 +10,29 @@
 </head>
 
 <body>
-    <br /><center><img class="header" src="images/banners/banner-home.png" /></center><br />
+    <br /><center><img id="header" src="images/banners/banner-home.png" /></center><br />
+    <script>
+    setWidthP(document.getElementById("header"), 0.9);
+    </script>
     <div class="body">
 		<div id="nav" align="center">
             <br />
             <a class="nav active" href="#"><img class="nav" src="images/nav/home-selected.png" /></a>
-            <div class="dropdown">
-	           	<img class="nav" src="images/nav/about.png" />
-                <div class="dropdown-content">
+            <span class="dropdown">
+            <img class="nav dropdown" onmouseover="setDropdownVisible()" onmouseout="setDropdownInvisible()" src="images/nav/about.png" />
+                <div id="ddc1" class="dropdown-content">
                    	<a href="aboutftc.html">About FTC</a>
                     <a href="aboutus.html">About Us</a>
                 </div>
-            </div>
+            </span>
     	    <a class="nav" href="supporter-resources.html"><img class="nav" src="images/nav/supporter-resources.png" /></a>
         	<a class="nav" href="team-resources.html"><img class="nav" src="images/nav/team-resources.png" /></a>
 		</div>
         <script>
-			console.log(window.mobilecheck());
-			if (window.mobilecheck()){
-				document.getElementById("nav").setAttribute("width", "90%");
-			}
+			console.log(document.querySelector("a.nav").style.display);
+			var navs = collectionToArray(document.querySelectorAll("img.nav"));
+			for (var i = 0; i < navs.length; i++)
+				setWidthP(navs[i], (window.innerWidth > window.innerHeight) ? 0.09 : 0.2);
 		</script>
     	<h1>Start of a New Season!</h1>
         <p>Hello everyone! The new FIRST Tech Challenge season has begun. This year's competition is <strong>Velocity Vortex</strong>. This year's challenge has the debut of <strong>launching objects</strong> and the first <strong>active competition</strong> component. See this year's challenge video below:</p>
@@ -38,6 +41,12 @@
         <h1>Meet the New Team:</h1>
         <p>Left to right: Joe Smith, John Doe, Jane Doe, Josh McIvaler, Names, names, names...</p>
         <br /><br /><br /><br /><br /><br />
+        <script>
+		var h1s = collectionToArray(document.querySelector("div.body h1"));
+		for (var i = 0; i < h1s.length; i++){
+			setH1FontByScreenSize(h1s[i]);
+		}
+		</script>
     </div>
 </body>
 </html>

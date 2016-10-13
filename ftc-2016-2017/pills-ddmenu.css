@@ -1,28 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
 
-/*a.nav {
-	border-width:medium;
-	text-align:center;
-	border-color:#333;     /*Color of the pill border*
-	border-style:solid;
-	border-radius:10px;    /*Roundness of the pill border. Higher value means more rounded corners*
-	background-color:#999; /*Background of the pill*
-	padding-left:10px;     /*Left padding (spacing fron text to edge of pil)*
-	padding-right:10px;    /*Right padding*
-	padding-top:7px;       /*Top padding*
-	padding-bottom:7px;    /*Bottom padding*
-	color:#000;            /*Text color*
-	font-size:18pt;        /*Font size. Use "pt" ending, not "px"*
-	text-decoration:none;
-	margin:auto;
-}
-
-a.active {
-	background-color:#00F; /*Background for the pill of the active page*
-	border-style:inset;
-}*/
-
 .dropdown {
 	position:relative;
 	display:inline-block;
