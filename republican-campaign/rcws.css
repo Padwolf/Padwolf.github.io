@@ -2,5 +2,9 @@
 /* CSS Document */
 
 body {
+	background-color:#000;
+}
+
+div#body {
 	background-color:#F00;
 }
