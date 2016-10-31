@@ -1,6 +1,10 @@
 @charset "utf-8";
 /* CSS Document */
 
+@media only screen and (max-width: 500px) {
+	
+}
+
 body {
 	background-color:#700;
 }
