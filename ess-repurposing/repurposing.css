@@ -58,6 +58,8 @@ div#body h3 {
 div#body p {
 	font-size:18px;
 	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	margin:75px;
+	margin-top:20px;
 }
 
 table#content {
