@@ -1,0 +1,49 @@
+body {
+	background-color:#00007f;
+}
+
+* {
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+
+div#body {
+	background-color:#CCC;
+	box-shadow: 0 0 7px;
+}
+
+div#nav {
+	width: 60%;
+	margin: auto;
+	padding-top: 5px;
+	padding-bottom:5px;
+	text-align:center;
+	background-color:#00007f;
+	box-shadow:inset 0 0 7px;
+}
+
+div#nav > a {
+	color:#DAA520;
+	font-size:18pt;
+	text-decoration:none;
+	font-weight:bold;
+	
+	text-shadow: 0 0 7px #000;
+	
+	display:inline-block;
+	zoom:1;
+	width:33%;
+}
+
+div#nav > a:hover {
+	color:#DAA520;
+	font-size:18pt;
+	text-decoration:none;
+	font-weight:bold;
+	
+	text-shadow: 0 0 5px #FAFAD2, 0 0 15px #000;
+	
+	display:inline-block;
+	zoom:1;
+	width:33%;
+}
