@@ -1,8 +1,4 @@
 body {
-<<<<<<< HEAD
-    background-color: bisque;
-}
-=======
         background-color: #141952;
 }
 
@@ -23,6 +19,13 @@ div#header>h2 {
         font-size: 32pt;
 }
 
+img#header {
+        border-radius: 10px;
+        width: 85%;
+        margin-top: 15px;
+        margin-bottom: 25px;
+}
+
 div#body {
         background-color: #4F2C00;
         color: #cc9a5d;
@@ -31,7 +34,7 @@ div#body {
         box-shadow: 5pt 5pt 7pt white;
         width: 95%;
         margin: auto;
-        min-height: 600px;
+        min-height: 575px;
 }
 
 div#nav {
