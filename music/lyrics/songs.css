@@ -1,0 +1,13 @@
+div#body {
+    text-align: center;
+}
+
+div#content > h1 {
+    font-size: 24pt;
+    text-shadow: none;
+}
+
+div#content > h3 {
+    font-size:16pt;
+    font-weight: bold;
+}
