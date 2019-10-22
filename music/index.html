@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<title>Codewolf Music</title>
+		<link rel="icon" type="image/png" href="images/favicon.png" />
+		<link rel="stylesheet" type="text/css" href="cm.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="cm.js"></script>
+	</head>
+	
+	<body>
+		<div id="banner">
+		
+		</div>
+		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+		<div id="body">
+			<br />
+			<div id="nav">
+				<a href="#">Page 1</a><a href="#">Page 2</a><a href="#">Page 3</a>
+				<script>
+					for (link in document.getElementById("nav").getElementsByTagName("a")) {
+						console.log(link);
+						link.onmouseover = function(){navLinkHover(link)};
+					}
+				</script>
+			</div>
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+		</div>
+		
+	</body>
+	
+</html>

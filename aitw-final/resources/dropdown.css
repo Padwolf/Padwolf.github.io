@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+
+.ddBtn {
+	background-color:#900;
+	color:#FFF;
+	padding:8px;
+	font-size:16pt;
+	border:none;
+	cursor:pointer;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+.ddBtn:hover {
+	background-color:#C00;
+}
+
+.dropdown 	{
+	position:relative;
+	display:inline-block;
+}
+
+.ddContent {
+	display:none;
+	position:absolute;
+	background-color:#000;
+	min-width:160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.ddContent a {
+	color:#FFF;
+	padding: 12px 16px;
+	text-decoration:none;
+	display:block;
+}
+
+.ddContent a:hover {background-color:#333}
+
+.show {
+	display:block;
+}
