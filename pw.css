@@ -77,6 +77,11 @@ div#content > h3 > a {
         color:inherit;
 }
 
+div#content > h4 {
+        font-size:18pt;
+        text-shadow: none;
+}
+
 div#content > p {
         font-size:14pt;
         text-shadow: none;
