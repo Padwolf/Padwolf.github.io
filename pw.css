@@ -1,5 +1,8 @@
 body {
-        background-color: #141952;
+        /* background-color: #141952; */
+        background-image:url('bg-grad.png');
+        background-attachment: fixed;
+        background-size: 100% 100%;
 }
 
 /* Put picture for header and page background */
@@ -80,6 +83,8 @@ div#content > h3 > a {
 div#content > h4 {
         font-size:18pt;
         text-shadow: none;
+        margin-top: 0pt;
+        margin-bottom: 0pt;
 }
 
 div#content > p {
@@ -88,6 +93,8 @@ div#content > p {
         margin-left: 2.5%;
         margin-right: 2.5%;
         font-weight: bold;
+        margin-top: 0pt;
+        margin-bottom: : 0pt;
 }
 
 div#content > p > a {
