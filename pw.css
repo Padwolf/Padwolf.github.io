@@ -99,6 +99,6 @@ div#content > p {
 
 div#content > p > a {
         text-decoration: none;
-        color: inherit;
+        color: #cc9a5d;
         text-shadow: 0pt 0pt 1pt white;
 }
