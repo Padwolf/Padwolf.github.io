@@ -82,6 +82,12 @@ div#content > h4 {
     margin-top: 0pt;
     margin-bottom: 0pt;
 }
+div#content > h5 {
+    font-size:10pt;
+    text-shadow: none;
+    margin-top: 0pt;
+    margin-bottom: 0pt;
+}
 
 div#content > p {
     font-size:14pt;
