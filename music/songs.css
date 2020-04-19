@@ -7,7 +7,15 @@ div#content > h1 {
     text-shadow: none;
 }
 
+div#content > h2 {
+    font-size:18pt;
+}
+
 div#content > h3 {
     font-size:16pt;
     font-weight: bold;
+}
+
+div#content > h1#title {
+    font-size:48pt;
 }
