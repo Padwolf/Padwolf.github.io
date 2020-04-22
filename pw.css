@@ -120,3 +120,7 @@ li > a {
     text-decoration: none;
     color: #4f3417;
 }
+
+iframe {
+    border-radius: 7px;
+}
