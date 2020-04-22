@@ -115,3 +115,8 @@ div#content > a {
     margin-top: 0pt;
     margin-bottom: 0pt;
 }
+
+li > a {
+    text-decoration: underline;
+    color: #4f3417;
+}
