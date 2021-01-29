@@ -1,0 +1,393 @@
+<HTML>
+<HEAD>
+<TITLE>VGO - Language Reference </TITLE>
+</HEAD>
+<BODY style="background-color:#ade6d8" LINK="#0000ff" VLINK="#800080">
+
+<br><br><br>
+<br><br>
+<br>
+
+<CENTER>
+<H3>
+<font size=7>c113c</font><br><br>
+<em> a Programming Language</em>
+</H3>
+<p>Wesley Pick-Roth</p>
+<code><a href="mailto:wesley.pick-roth@student.nmt.edu">wesley.pick-roth@student.nmt.edu</A></code>
+<p>Logan Decker</p>
+<code><a href="mailto:logan.decker@student.nmt.edu">logan.decker@student.nmt.edu</A></code><br>
+<p>Patrick Duane</p>
+<code><a href="mailto:patrick.duane@student.nmt.edu">patrick.duane@student.nmt.edu</A></code><br>
+<br>
+<em> Draft Version 0.1, January 22, 2021. </em>
+<p>
+<br><br>
+<h2> Language Reference Manual </h2>
+<br>
+<strong>Abstract</strong>
+</CENTER>
+<p>
+
+<blockquote>
+
+<code>c113c</code> (pronounced "See 113 See", short for
+CSE 113 Compiler) is a subset of
+the ANSI C Programming Language
+<code>c113c</code> is a tiny
+language intended to be implemented in a compiler construction class.
+
+
+</blockquote>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<center>
+<A href="http://www.nmt.edu"> New Mexico Institute of Mining and Technology</A><br>
+<A href="http://www.cs.nmt.edu">Department of Computer Science and Engineering</A><br>
+Socorro, NM 87801 USA
+</center>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<H3>Contents </h3>
+
+<OL>
+
+<LI><A HREF="#Introduction">Introduction</A></LI>
+<LI><A HREF="#Lexical">Lexical Rules</A></LI>
+	<UL>
+	<LI> <A HREF="#Comments">Whitespace and Comments</A>
+	<LI> <A HREF="#Reserved">Reserved words</A>
+	<LI> <A HREF="#Operators">Operators</A>
+	<li> <A HREF="#Literals">Literals</A>
+	<li> <A HREF="#Punctuation">Punctuation</A>
+	<LI><A HREF="#SemiColons">Semi-colons</A></LI>
+	</UL>
+<LI><A HREF="#Syntax">Syntax</A></LI>
+	<UL>
+	<LI><A HREF="#FunctionSyntax">Function Syntax</A></LI>
+	<LI><A HREF="#ControlStructures">Control Structures</A></LI>
+	<LI><A HREF="#DeclarationSyntax">Variable Declaration Syntax</A></LI>
+	</UL>
+<LI><A HREF="#Types">Data Types and Semantics</A></LI>
+	<UL>
+	<LI><A HREF="#Numbers">Numbers</A></LI>
+	<LI><A HREF="#Arrays">Arrays</A></LI>
+	<LI><A HREF="#Strings">Strings</A></LI>
+	</UL>
+
+<LI><A HREF="#Summary">Summary</A>
+</OL>
+<p>
+<HR>
+
+<h2><A NAME="Introduction">1. Introduction</A></h2>
+
+<code>c113c</code> is a subset of C.
+<code>c113c</code> is intended to correspond roughly to
+the subset of C that would be covered in a CS1 class such as NMT's CS
+113 course.
+
+<p>
+
+The facilities that c113c supports are just barely
+interesting enough to write some non-trivial computations in it.
+
+<p>
+c113c programs are legal C programs with a .c file extension.
+A program begins
+with a <code>main()</code> procedure.
+A "Hello world" program looks like:
+
+<pre>
+#include <stdio.h>
+
+int main() {
+   printf("Hello, world");
+   return 0;
+}
+</pre>
+
+The c113c include facility is restricted to only those built-in system
+includes used in CSE 113, which are faked in c113c.
+
+C113c supports a small subset of the functionality of a small subset of C's
+includes, including stdio.h (printf), time.h (currenttime), and
+math.h (rand).
+While the full C versions of these libraries support many many functions,
+and even types, c113c will be minimalist. For example, instead of
+defining 25 public symbols in <code>stdio.h</code>, c113c will have
+as few as possible, possibly only one or two. So far, only printf().
+
+<p>
+
+C uses variable initializers.
+c113c does not do initializers.
+
+<pre>
+int c, p, j = 1;  /* legal in C, not in c113c */
+</pre>
+
+C features many basic types.
+c113c supports:
+
+<pre>
+char
+int
+float64
+</pre>
+
+<code>c113c</code> has 2 types of loops, the while loop and the for loop. Curly braces are required.
+
+<p>
+
+Conditionals use syntax similar to loops. Curly braces are required.
+An <code>else</code> branch is optional.
+
+
+<pre>
+if (x &lt; 0) {
+   ...
+}
+</pre>
+
+Else branches require curly braces, unless they are (chained) if statements.
+Due to Go's wimpy semi-colon insertion that is not as good as Unicon's semi-colon
+insertion rule, chained <code>else</code>s have to be on the line
+with the curly brace that closes the preceding then-part or else-part.
+
+<pre>
+if (x &lt; 0) {
+   ...
+} else if (x &lt; 10) {
+   ...
+} else {
+   ...
+}
+</pre>
+
+<p>
+
+c113c does implement switch statements.
+
+<p>
+C supports creation of new types via a struct. c113c has structs.
+<p>
+
+C has pointers, but no pointer arithmetic. c113c should support just enough
+pointers to support homework assignments in CSE 113. Linked lists.
+Thus, pointers to structs.
+
+<p>
+
+C has arrays.  c113c has one-dimensional arrays only.
+
+<p>
+
+When in doubt about c113c features, refer to the C language specification.
+I will add notes below as needed.  The easiest way to get out of
+having to implement something is to ask about it and negotiate.
+
+
+
+<h3> 2. <A NAME="Lexical">Lexical Rules</A> </h3>
+
+The lexical rules of c113c start with: the lexical rules of C.
+<code>c113c</code>
+may simplify and reduce the lexical rules of C a bit.
+<p>
+
+
+</p>
+
+<A NAME="Comments"></A><B><FONT SIZE=3>2.1 Whitespace and Comments</B></FONT>
+<p>
+Whitespace characters will include space, tab, newline, and carriage return. For parsing, these will all be replaced with spaces, and any repeated whitespace will be shortened to a single character. Whitespace at the beginning and end of a statement will be removed.
+</p>
+
+<p>
+Comments must be preceded by “ /* “ and end with “ */ ”. The following is an example: <code> /* COMMENT_HERE */ </code>.
+</p>
+
+<A NAME="Reserved"></A><B><FONT SIZE=3>2.2 Reserved Words</B></FONT>
+<p>
+The following reserved words in C should be reserved words for this language:
+if, else, switch, case, default
+break
+int, float, char, double, long
+for, while
+void
+signed, const, unsigned
+return
+continue
+sizeof
+struct, typedef
+
+</p>
+
+<A NAME="Operators"></A><B><FONT SIZE=3>2.3 Operators</B></FONT>
+<p>
+The following symbols are considered operators in C:
++, -, *, /, %, ++, --, ==, !=, >, <, >=, <=, &&, ||, !, &, |, ^, ~, >>, <<, = <br />
+
+
+</p>
+
+<A NAME="Literals"></A><B><FONT SIZE=3>2.4 Literals</B></FONT>
+<p>
+A sequence of digits (0-9) starting with a non-zero number will be treated as a base 10 integer. Integer literals starting with a 0 followed by either ‘x’ or ‘X’ will be treated as a hexadecimal value. These may be followed by zero or more values from 0-9 or a-f or A-F. Integer literals starting with a zero will be treated as an octal value. They may be followed by a value from 1-7 and zero or more values from 0-7. An integer literal preceded by a negative sign will be treated as a negative integer.
+</p>
+
+<p>
+A sequence of digits (0-9) followed by a decimal point followed by one or more digits (0-9) will be treated as a base 10 double-length floating point (double) value. Including a suffix of ‘f’ will instead be treated as a floating point (float) value.
+An integer value with a suffix ‘f’ will instead be treated as a float, and with a suffix ‘d’ will be treated as a double
+</p>
+
+<p>
+An instance of an apostrophe followed by zero or one characters and then another apostrophe will be treated as a character literal. An instance of a quotation mark followed by zero or more characters will be treated as a string literal.
+</p>
+
+<A NAME="Punctuation"></A><B><FONT SIZE=3>2.5 Punctuation</B></FONT>
+<p>
+The following characters are used as punctuation in C, and all will be supported in c113c:<code> ; : , ' " { } [ ] ( ) . -> </code>
+</p>
+
+<A NAME="Identifiers"></A><B><FONT SIZE=3>2.6 Identifiers</B></FONT>
+<p>
+Valid identifiers are sequences of upper and lower case letters, numbers, and the underscore character immediately preceded and followed by a white space character. These identifiers cannot start with a number, and a newly defined identifier cannot be exactly equal in case and spelling to one of the previously defined keywords.
+</p>
+
+<h3> 3. <A NAME="Syntax">Syntax</A> </h3>
+<p>
+
+
+</p>
+
+<A NAME="FunctionSyntax"></A><B><FONT SIZE=3>3.1 Function Syntax</B></FONT>
+<p>
+Functions in c113c have the following syntax:
+<code>return_type function_name[optional_whitespace](parameter_list) { body }</code>
+Function name must follow the format of valid identifiers, as stated above. Whitespace is required between the return type and the function name and is optional.
+
+Calling a function must have the following syntax:
+<code>function_name[optional_whitespace](parameters)</code>
+
+</p>
+
+<A NAME="ControlStructures"></A><B><FONT SIZE=3>3.2 Control Structures</B></FONT>
+<p>
+Control structures supported by c113c are if-else, while, for, switch
+If statements follow the following syntax:
+<code>if (condition) body<br/>
+else body</code><br />
+If there is no body for the else statement, it can be omitted.<br />
+An else if statement can be made by putting an if statement in the body of an else statement<br /><br />
+
+The syntax of a while statement is as follows:<br />
+<code>while (condition) body</code><br /><br />
+
+The syntax of a for loop is as follows:<br />
+<code>for (initializer; condition; modifier) body</code><br /><br />
+
+The syntax of a switch statement is as follows:<br />
+<code>switch(variable) body</code><br />
+Where the body is of the following form:<br />
+<code>{case [int]: body case [int]: body case… … default: body}</code>
+Any spaces in the above can be represented by any combination of whitespace characters
+
+Any complete statement should designate their endpoints with a semicolon. New statements begin immediately following a semicolon.
+</p>
+
+<A NAME="Structs"></A><B><FONT SIZE=3>3.3 Structures</B></FONT>
+<p>
+Structures in C allow for a user to define a custom block of data, containing zero or more related pieces of data. Structures follow the following syntax:
+<code>struct [structure tag] { member; member; … } variable_names;
+</code><br />
+Where each member is a variable following the previously stated rules for declaring variables, and variable names is one or more comma-separated identifiers that will be declared according to the defined struct. The struct must end with a semicolon.
+
+</p>
+
+<A NAME="DeclarationSyntax"></A><B><FONT SIZE=3>3.4 Declaration Syntax</B></FONT>
+<p>
+Variables can be declared and assigned in a single statement or can be split into declaration and assignment.
+A declaration statement follows this syntax:<br />
+<code>modifier data_type variable_name;</code><br />
+The variable name must follow the format of identifiers as previously stated<br /><br />
+
+Variable assignment follows this syntax:<br />
+<code>variable_name = statement;</code><br />
+The statement must result in a value of the same data type. This can either be a literal or some statement that returns the same data type. <br />
+
+Declaration and assignment in a single statement follows this syntax: <br />
+<code>modifier data_type variable_name = statement;</code>
+All requirements stated previously in this subsection still apply
+
+</p>
+<h3><A NAME="Types">4. Data Types</A></h3>
+
+
+
+<A NAME="Numbers"></A><B><FONT SIZE=3>4.1 Numbers</B></FONT>
+<p>
+Integer data types include: <code>int</code>, <code>long</code>, <code>char</code>, and pointers.<br />
+Floating data types include: <code>float</code> and <code>double</code>.<br /><br />
+
+The standard integer data type is the <code>int</code>, being represented in 4 bytes, or 32 bits.<br />
+A <code>long</code> utilizes twice the space of an integer and can represent a number 232 times bigger than an int.<br />
+A <code>char</code> is represented with a single byte (8 bits), with a maximum unsigned value of 255. These are also used to represent ASCII character codes.<br />
+A pointer is a special kind of number used to represent a memory address. It’s length is 64 bits on a 64 bit machine. Pointers are declared with an asterisk (*) in the declaration between data type and variable name<br /><br />
+
+The standard floating point data type is the <code>double</code>, following the IEEE-754 standard for storing floating point numbers. It takes up 8 bytes (64 bits) of storage.<br />
+The <code>float</code> data type also follows the IEEE-754 standard, but uses 4 bytes (32 bits) of storage.
+
+<p>
+<A NAME="Strings"></A><B><FONT SIZE=3>4.2 Strings</B></FONT> <BR>
+<p>
+Strings in the language, as in C, are an array of characters. Any text between a pair of quotation marks “ or apostrophes ‘ in program code will be stored in a fixed-size character array by their ascii values. A pair of apostrophes indicates that the string is a constant string, and cannot be modified. At the creation of a string, an additional byte of memory will be allocated to the end containing the null character. This null character will indicate the end of the string’s contents.
+
+<p>
+<A NAME="Arrays"></A><B><FONT SIZE=3>4.3 Arrays</B></FONT> <BR>
+<p>
+Arrays in c113c store 0 or more instances of a data type. These will be implemented roughly the same way as in C, where each consecutive piece of data is stored one after another and the starting address is known. Arrays are established to be of a fixed length/size, which cannot be changed. Arrays may be managed and instantiated through the usage of the square brackets where the desired element is referenced by a number between the brackets. This number represents the position of the desired element, and begins with 0. For example, creating a new integer array with 5 elements would have the following:
+<code>
+int array_Name [5];
+</code>
+and accessing the the second element would be done with:
+<code>
+array_Name[1]
+</code>.
+
+Because the starting address of an array is known, pointers may be used to more easily access and work with arrays. Pointer arithmetic may then be used in order to access other elements in the array.
+</p>
+
+
+<h3><A NAME="Functions">5. Library Functions</A></h3>
+<p>
+We plan on implementing at least a few of the functions from the following libraries: stdio.h, stdlib.h, math.h, string.h, and errno.h. Reading input and displaying output by utilizing processing functions from stdio.h and string.h are perhaps the most important library functions that we’ll be implementing, and the conversion functions from stdlib.h and mathematical functions from math.h follow closely behind.
+</p>
+
+
+<A name="Summary">
+<H3>Summary</H3>
+</A>
+
+Sure, c113c may be a toy language designed for a compiler class.
+Even with only this much, it may provide a convenient notation for a lot of simple programming tasks such as those faced by students in CSE 113. It’s very possible that we haven’t remembered our time in CSE 113 perfectly and, as a result, may have included unnecessary features. However, we feel that what we have described in this document, when successfully implemented, could be used to complete all assignments in the CSE 113 class.
+
+</BODY>
+</HTML>
+
